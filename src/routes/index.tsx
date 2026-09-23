@@ -70,14 +70,16 @@ function Index() {
             </span>
           </button>
 
-          <nav className="flex h-full items-center gap-1" aria-label="Navegação principal">
-            <Button variant="nav" data-active={view === "analyze"} onClick={() => setView("analyze")}>
-              <Leaf className="sm:hidden" /> <span className="hidden sm:inline">Analisar</span>
-            </Button>
-            <Button variant="nav" data-active={view === "history"} onClick={() => setView("history")}>
-              <History className="sm:hidden" /> <span className="hidden sm:inline">Histórico</span>
-            </Button>
-          </nav>
+          {view === "analyze" && !submittedPrompt ? null : (
+            <nav className="flex h-full items-center gap-1" aria-label="Navegação principal">
+              <Button variant="nav" data-active={view === "analyze"} onClick={() => setView("analyze")}>
+                <Leaf className="sm:hidden" /> <span className="hidden sm:inline">Analisar</span>
+              </Button>
+              <Button variant="nav" data-active={view === "history"} onClick={() => setView("history")}>
+                <History className="sm:hidden" /> <span className="hidden sm:inline">Histórico</span>
+              </Button>
+            </nav>
+          )}
 
           <span className="hidden text-sm font-semibold text-primary-foreground/85 md:block">Banco do Brasil</span>
         </div>
