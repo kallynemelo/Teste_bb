@@ -61,29 +61,25 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-30 border-t-4 border-brand-yellow bg-primary text-primary-foreground shadow-header">
-        <div className={`mx-auto flex h-17 max-w-7xl items-center px-4 sm:px-6 ${submittedPrompt ? "justify-center" : "justify-between"}`}>
-          {!submittedPrompt && (
-            <button className="flex items-center gap-3" onClick={() => { setView("analyze"); setSubmittedPrompt(""); setPrompt(""); }} aria-label="Ir para o início">
-              <img src={logoAsset.url} alt="Banco do Brasil" className="h-10 w-18 rounded-sm object-cover" />
-              <span className="hidden border-l border-primary-foreground/30 pl-3 text-left sm:block">
-                <strong className="block text-base leading-none">Impacta<span className="text-brand-yellow">IA</span></strong>
-                <small className="mt-1 block text-xs text-primary-foreground/75">Pegada Ambiental de IA</small>
-              </span>
-            </button>
-          )}
+        <div className="mx-auto flex h-17 max-w-7xl items-center justify-between px-4 sm:px-6">
+          <button className="flex items-center gap-3" onClick={() => { setView("analyze"); setSubmittedPrompt(""); setPrompt(""); }} aria-label="Ir para o início">
+            <img src={logoAsset.url} alt="Banco do Brasil" className="h-10 w-18 rounded-sm object-cover" />
+            <span className="hidden border-l border-primary-foreground/30 pl-3 text-left sm:block">
+              <strong className="block text-base leading-none">Impacta<span className="text-brand-yellow">IA</span></strong>
+              <small className="mt-1 block text-xs text-primary-foreground/75">Pegada Ambiental de IA</small>
+            </span>
+          </button>
 
-          {(submittedPrompt || view === "history") && (
-            <nav className="flex h-full items-center gap-1" aria-label="Navegação principal">
-              <Button variant="nav" data-active={view === "analyze"} onClick={() => setView("analyze")}>
-                <Leaf className="sm:hidden" /> <span className="hidden sm:inline">Analisar</span>
-              </Button>
-              <Button variant="nav" data-active={view === "history"} onClick={() => setView("history")}>
-                <History className="sm:hidden" /> <span className="hidden sm:inline">Histórico</span>
-              </Button>
-            </nav>
-          )}
+          <nav className="flex h-full items-center gap-1" aria-label="Navegação principal">
+            <Button variant="nav" data-active={view === "analyze"} onClick={() => setView("analyze")}>
+              <Leaf className="sm:hidden" /> <span className="hidden sm:inline">Analisar</span>
+            </Button>
+            <Button variant="nav" data-active={view === "history"} onClick={() => setView("history")}>
+              <History className="sm:hidden" /> <span className="hidden sm:inline">Histórico</span>
+            </Button>
+          </nav>
 
-          {!submittedPrompt && <span className="hidden text-sm font-semibold text-primary-foreground/85 md:block">Banco do Brasil</span>}
+          <span className="hidden text-sm font-semibold text-primary-foreground/85 md:block">Banco do Brasil</span>
         </div>
       </header>
 
