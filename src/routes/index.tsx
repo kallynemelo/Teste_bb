@@ -70,7 +70,7 @@ function Index() {
             </span>
           </button>
 
-          {view === "analyze" && !submittedPrompt ? null : (
+          {view === "history" ? (
             <nav className="flex h-full items-center gap-1" aria-label="Navegação principal">
               <Button variant="nav" data-active={view === "analyze"} onClick={() => setView("analyze")}>
                 <Leaf className="sm:hidden" /> <span className="hidden sm:inline">Analisar</span>
@@ -79,7 +79,7 @@ function Index() {
                 <History className="sm:hidden" /> <span className="hidden sm:inline">Histórico</span>
               </Button>
             </nav>
-          )}
+          ) : null}
 
           <span className="hidden text-sm font-semibold text-primary-foreground/85 md:block">Banco do Brasil</span>
         </div>
