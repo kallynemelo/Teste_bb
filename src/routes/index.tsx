@@ -58,6 +58,8 @@ function Index() {
     setView("analyze");
   }
 
+  const showNav = view === "history";
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-30 border-t-4 border-brand-yellow bg-primary text-primary-foreground shadow-header">
@@ -70,7 +72,7 @@ function Index() {
             </span>
           </button>
 
-          {view === "history" ? (
+          {showNav ? (
             <nav className="flex h-full items-center gap-1" aria-label="Navegação principal">
               <Button variant="nav" data-active={view === "analyze"} onClick={() => setView("analyze")}>
                 <Leaf className="sm:hidden" /> <span className="hidden sm:inline">Analisar</span>
