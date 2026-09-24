@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import logoAsset from "@/assets/banco-do-brasil.png.asset.json";
+import logobb from '../assets/icones/logobb.png';
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -68,7 +68,7 @@ function Index() {
       <header className="sticky top-0 z-30 border-t-4 border-brand-yellow bg-primary text-primary-foreground shadow-header">
         <div className="mx-auto flex h-17 max-w-7xl items-center justify-between px-4 sm:px-6">
           <button className="flex items-center gap-3" onClick={() => { setView("analyze"); setSubmittedPrompt(""); setPrompt(""); }} aria-label="Ir para o início">
-            <img src={logoAsset.url} alt="Banco do Brasil" className="h-10 w-18 rounded-sm object-cover" />
+            <img src={logobb} alt="Banco do Brasil" className="h-10 w-18 rounded-sm object-cover" />
             <span className="hidden border-l border-primary-foreground/30 pl-3 text-left sm:block">
               <strong className="block text-base leading-none">Impacta<span className="text-brand-yellow">IA</span></strong>
               <small className="mt-1 block text-xs text-primary-foreground/75">Pegada Ambiental de IA</small>
@@ -112,7 +112,7 @@ function HomeView({ prompt, setPrompt, analyze, inputRef }: PromptProps) {
   return (
     <main className="mx-auto flex min-h-[calc(100vh-4.5rem)] max-w-5xl flex-col items-center justify-center px-4 pb-24 pt-12">
       <div className="mb-8 text-center">
-        <img src={logoAsset.url} alt="Banco do Brasil" className="mx-auto mb-6 h-20 w-36 rounded-md object-cover shadow-brand" />
+        <img src={logobb} alt="Banco do Brasil" className="mx-auto mb-6 h-20 w-36 rounded-md object-cover shadow-brand" />
         <h1 className="font-display text-3xl font-semibold text-primary sm:text-4xl">Por onde começamos?</h1>
         <p className="mt-3 text-muted-foreground">Descubra o impacto ambiental do seu próximo prompt.</p>
       </div>
